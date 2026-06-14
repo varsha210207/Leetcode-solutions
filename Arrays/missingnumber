@@ -1,0 +1,87 @@
+//missing number
+class Solution {
+    public int missingNumber(int[] nums) {
+        int sum=0;
+        int n=nums.length;
+        int ans=n*(n+1)/2;
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+nums[i];
+        }
+        int result=ans-sum;
+        return result;
+
+
+        
+        
+    }
+}
+
+
+
+
+//remove duplicates
+leetcode problem:26
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n=nums.length;
+        int count=0;
+        int k=0;
+        for(int i=1;i<n;i++)
+        {
+            if(nums[i]!=nums[k])
+            {
+                k++;
+                nums[k]=nums[i];
+                
+            }
+        }
+        return k+1;
+    }
+}
+   
+
+
+
+
+//maximum concecutive ones 
+leetcode problem:485
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int n=nums.length;
+        int maxi=0;
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]==1)
+            {
+                count=count+1;
+                maxi=Math.max(maxi,count);
+            }
+            else{
+                count=0;
+            }
+        }
+        return maxi;
+        
+        
+    }
+}        
+
+
+
+
+//singlenumber
+leetcode number:136
+class Solution {
+    public int singleNumber(int[] nums) {
+        int n=nums.length;
+        int result=0;
+        for(int i=0;i<n;i++)
+        {
+            result=result^nums[i];
+        }
+        return result;
+    }
+}
+  
