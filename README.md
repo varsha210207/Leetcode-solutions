@@ -4,3 +4,7 @@ day 2-move zeros
 day 3-rotate array
 day 4-union of array
 day 5-max subarray
+day 6 missing number
+day 7 two sum
+day 8 majority element
+
