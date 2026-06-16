@@ -7,4 +7,6 @@ day 5-max subarray
 day 6 missing number
 day 7 two sum
 day 8 majority element
+day 9 stock buy and sell
+day 10 rearrange array element ny sign
 
