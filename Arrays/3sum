@@ -1,0 +1,68 @@
+//3 sum
+
+import java.util.HashMap;
+class Main{
+    public static void main(String[] args) {
+        Main obj = new Main();
+        int[] nums = {1, 2, 3,7,4}; // Example data
+        int target = 10;
+        System.out.println(obj.threeSumSmaller(nums, target));
+    }
+    public int threeSumSmaller(int[] nums, int target) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
+        int sum=0;
+        int count=0;
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                sum=nums[i]+nums[j];
+                int rem=target-sum;
+                if(map.containsKey(rem))
+                {
+                    count=count+1;
+                }
+                if(!map.containsKey(rem))
+                {
+                    map.put(rem,i);
+                }
+            }
+            
+        }
+        return count;
+        // Your code goes here
+    }
+}
+
+//optimal
+public int threeSumSmaller(int[] nums, int target) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
+        int sum=0;
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            int left=i+1;
+            int right=n-1;
+            
+            
+            while(left<right)
+            {
+                sum=nums[i]+nums[left]+nums[right];
+                if(sum<target)
+                {
+                    count=count+(right-left);
+                    left++;
+                }
+                else{
+                    right--;
+                }
+            }
+            
+            
+        // Your code goes here
+    }
+    return count;
+}
+}
