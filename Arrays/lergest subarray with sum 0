@@ -1,0 +1,54 @@
+//brute force
+
+class Solution {
+    public int maxLen(int[] nums) {
+        int n = nums.length;
+        int maxi = 0;
+
+        for(int i = 0; i < n; i++) {
+            int sum = 0;
+            int count = 0;
+
+            for(int j = i; j < n; j++) {
+                sum += nums[j];
+                count++;
+
+                if(sum == 0) {
+                    maxi = Math.max(maxi, count);
+                }
+            }
+        }
+        return maxi;
+    }
+}
+
+
+//optimal
+class Solution {
+    public int maxLen(int[] nums) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int n=nums.length;
+        int sum=0;
+        int maxi=0;
+        
+        for(int i=0;i<n;i++)
+        {
+            sum=sum+nums[i];
+            if(sum==0)
+            {
+                maxi=i+1;
+            }
+            if(map.containsKey(sum))
+            {
+                maxi=Math.max(maxi,i-map.get(sum));
+
+            }
+            else
+            {
+                map.put(sum,i);
+            }
+        }
+        return maxi;
+        // Your code goes here
+    }
+}
