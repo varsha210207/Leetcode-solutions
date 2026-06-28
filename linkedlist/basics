@@ -1,0 +1,135 @@
+//print linked list
+class Node {
+
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Node first = new Node(10);
+        Node second = new Node(20);
+        Node third = new Node(30);
+
+        first.next = second;
+        second.next = third;
+
+        Node head = first;
+
+        Node temp = head;
+
+        while(temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
+
+
+
+//count linked list
+class Node {
+
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        int count=0;
+        Node first = new Node(10);
+        Node second = new Node(20);
+        Node third = new Node(30);
+
+        first.next = second;
+        second.next = third;
+
+        Node head = first;
+
+        Node temp = head;
+
+        while(temp != null) {
+            count++; 
+            temp = temp.next;
+            
+        }
+System.out.print(count); 
+    }
+}
+
+
+
+//find element in linked list
+boolean found = false;
+
+while(temp != null) {
+    if(temp.data == 30) {
+        found = true;
+        break;
+    }
+    temp = temp.next;
+}
+
+if(found)
+    System.out.println("Element Found");
+else
+    System.out.println("Element Not Found");
+
+
+
+    //sum of linked list
+    class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class Main {
+
+    static int sumNodes(Node head) { 
+        int sum= 0; 
+        Node temp = head;
+
+        while (temp != null) {
+            sum=sum+temp.data; 
+            temp = temp.next;
+        }
+
+        return sum; 
+    }
+
+    public static void main(String[] args) {
+
+        Node first = new Node(10);
+        Node second = new Node(20);
+        Node third = new Node(30);
+        Node fourth = new Node(40);
+
+
+        first.next = second;
+        second.next = third;
+        third.next=fourth;
+
+
+        Node head = first;
+
+        System.out.println(sumNodes(head)); 
+    }
+}
