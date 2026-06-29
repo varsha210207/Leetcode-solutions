@@ -1,0 +1,75 @@
+//insert at middle with pos
+
+
+static Node insertAtPosition(Node head, int data, int position) {
+
+    Node newNode = new Node(data);
+
+    // Insert at beginning
+    if (position == 1) {
+        newNode.next = head;
+        return newNode;
+    }
+
+    Node temp = head;
+
+    for (int i = 1; i < position - 1; i++) {
+        temp = temp.next;
+    }
+
+    newNode.next = temp.next;
+    temp.next = newNode;
+
+    return head;
+}
+
+
+// without pos after node
+static void insertAfter(Node current, int data) {
+
+    if (current == null)
+        return;
+
+    Node newNode = new Node(data);
+
+    newNode.next = current.next;
+
+    current.next = newNode;
+}
+
+
+// after node
+static Node insertBefore(Node head, int target, int data) {
+
+    if (head == null)
+        return null;
+
+    // Insert before the first node
+    if (head.data == target) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        return newNode;
+    }
+
+    Node temp = head;
+
+    while (temp.next != null && temp.next.data != target) {
+        temp = temp.next;
+    }
+
+    if (temp.next == null) {
+        System.out.println("Target not found");
+        return head;
+    }
+
+    Node newNode = new Node(data);
+
+    newNode.next = temp.next;
+    temp.next = newNode;
+
+    return head;
+}
+
+
+
+
